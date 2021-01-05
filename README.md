@@ -1,2 +1,2 @@
 # vimrc
-vimrc file to supercharge Vim editor
+vimrc file to supercharge Vim editor v8.2
