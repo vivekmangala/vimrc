@@ -2,6 +2,9 @@
 vimrc file to supercharge VIM editor (v8.2 or higher)
 
 ## Prerequisites
+
+If you are running VIM version 8.2 or higher, simply copy the .vimrc file to your home folder and jump to *Install plugins* section
+
 ---
 ### Install latest VIM from source
 ```
