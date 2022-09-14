@@ -11,7 +11,7 @@ cd vim-git
 make
 sudo make install
 ```
-### Errors
+### Troubleshooting
 If you get following error message:
 ```
 fatal: unable to access 'https://github.com/vim/vim.git/': server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none
