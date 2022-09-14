@@ -16,7 +16,28 @@ If you get following error message:
 ```
 fatal: unable to access 'https://github.com/vim/vim.git/': server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none
 ```
-<<TBD: no working solution identified yet>>
+Try following commands:
+```
+# SSL Setup for MiTM (Enterprise scenario) - chech this URL
+https://fabianlee.org/2019/01/28/git-client-error-server-certificate-verification-failed/
+
+# For Git error like:
+# fatal: unable to access 'https://github.com/<user>/<project>.git': server certificate verification failed. CAfile: none CRLfile: none
+
+sudo apt-get install --reinstall ca-certificates
+sudo mkdir /usr/local/share/ca-certificates/cacert.org
+sudo wget -P /usr/local/share/ca-certificates/cacert.org http://www.cacert.org/certs/root.crt http://www.cacert.org/certs/class3.crt
+sudo update-ca-certificates
+git config --global http.sslcainfo /etc/ssl/certs/ca-certificates.crt
+
+You can try disabling SSL certificate verification using:
+export GIT_SSL_NO_VERIFY=1
+#or
+git config --global http.sslverify false
+
+Running git in verbose mode:
+GIT_CURL_VERBOSE=1 git clone --progress --verbose https://github.com/vim/vim.git
+```
 
 ### Install plugins
 VIM 8.x supports plugins directly without any Plugin Manager, just checkout the plugins to the ~/.vim/pack/dist/start directory
