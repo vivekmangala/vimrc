@@ -14,28 +14,34 @@ sudo make install
 ### Troubleshooting
 If you get following error message:
 ```
-fatal: unable to access 'https://github.com/vim/vim.git/': server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none
+fatal: unable to access 'https://github.com/<user>/<project>.git': server certificate verification failed. CAfile: none CRLfile: none
 ```
-Try following commands:
+Try following steps:
 ```
-# SSL Setup for MiTM (Enterprise scenario) - chech this URL
-https://fabianlee.org/2019/01/28/git-client-error-server-certificate-verification-failed/
-
-# For Git error like:
-# fatal: unable to access 'https://github.com/<user>/<project>.git': server certificate verification failed. CAfile: none CRLfile: none
-
 sudo apt-get install --reinstall ca-certificates
 sudo mkdir /usr/local/share/ca-certificates/cacert.org
 sudo wget -P /usr/local/share/ca-certificates/cacert.org http://www.cacert.org/certs/root.crt http://www.cacert.org/certs/class3.crt
 sudo update-ca-certificates
 git config --global http.sslcainfo /etc/ssl/certs/ca-certificates.crt
+```
 
-You can try disabling SSL certificate verification using:
+If error message changes to:
+```
+fatal: unable to access 'https://github.com/vim/vim.git/': server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none
+```
+Try disabling SSL certificate verification using:
+```
 export GIT_SSL_NO_VERIFY=1
 #or
 git config --global http.sslverify false
+```
 
-Running git in verbose mode:
+Further read:
+SSL Setup for MiTM (Enterprise scenario) - chech this URL
+https://fabianlee.org/2019/01/28/git-client-error-server-certificate-verification-failed/
+
+#Running git in verbose mode:
+```
 GIT_CURL_VERBOSE=1 git clone --progress --verbose https://github.com/vim/vim.git
 ```
 
