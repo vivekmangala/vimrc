@@ -36,14 +36,14 @@ export GIT_SSL_NO_VERIFY=1
 git config --global http.sslverify false
 ```
 
-Further read:
-SSL Setup for MiTM (Enterprise scenario) - chech this URL
-https://fabianlee.org/2019/01/28/git-client-error-server-certificate-verification-failed/
-
-#Running git in verbose mode:
+Run git in verbose mode and check output
 ```
 GIT_CURL_VERBOSE=1 git clone --progress --verbose https://github.com/vim/vim.git
 ```
+
+Further read:
+SSL Setup for MiTM (Enterprise scenario) - chech this URL
+https://fabianlee.org/2019/01/28/git-client-error-server-certificate-verification-failed/
 
 ### Install plugins
 VIM 8.x supports plugins directly without any Plugin Manager, just checkout the plugins to the ~/.vim/pack/dist/start directory
