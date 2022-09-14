@@ -1,5 +1,5 @@
 # vimrc
-vimrc file to supercharge Vim editor (v8.2 or higher)
+vimrc file to supercharge VIM editor (v8.2 or higher)
 
 ## Prerequisites
 ---
@@ -11,8 +11,15 @@ cd vim-git
 make
 sudo make install
 ```
+### Errors
+If you get following error message:
+```
+fatal: unable to access 'https://github.com/vim/vim.git/': server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none
+```
+<<TBD: no working solution identified yet>>
+
 ### Install plugins
-Vim 8.x supports plugins directly without any Plugin Manager, just checkout the plugins to the ~/.vim/pack/dist/start directory
+VIM 8.x supports plugins directly without any Plugin Manager, just checkout the plugins to the ~/.vim/pack/dist/start directory
 ```
 git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
 git clone https://github.com/tpope/vim-fugitive.git ~/.vim/pack/dist/start/vim-fugitive
