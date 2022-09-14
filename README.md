@@ -3,7 +3,7 @@ vimrc file to supercharge VIM editor (v8.2 or higher)
 
 ## Prerequisites
 ---
-### Install latest Vim version
+### Install latest VIM from source
 ```
 git clone https://github.com/vim/vim.git vim-git
 cd vim-git
